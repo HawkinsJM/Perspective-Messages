@@ -1,0 +1,11 @@
+{
+  "name": "perspective_messages",
+  "version": "1.0.0",
+  "description": "Node to browser visualization for projection",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeffre Hawkins",
+  "license": "ISC"
+}

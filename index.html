@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perspective Messages</title>
+
+<!-- <link rel="stylesheet" href="public/main4.css"> -->
+<link rel="stylesheet" href="main4.css">
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+<body>
+  <svg>
+      <symbol id="what1">
+        <text text-anchor="middle" x="50%" dy="2em" id="line1">
+        Welcome to
+        </text>
+      </symbol>
+
+      <symbol id="what2">
+        <text text-anchor="middle" x="50%" y="2em" dy="1.2em" id="line2">
+        Gray Area
+        </text>
+      </symbol>
+
+      <!-- Duplicate symbols -->
+<use xlink:href="#what1" class="text"
+ ></use>
+<use xlink:href="#what1" class="text"
+ ></use>
+<use xlink:href="#what1" class="text"
+ ></use>
+<use xlink:href="#what1" class="text"
+ ></use>
+<use xlink:href="#what1" class="text"
+ ></use>
+
+ <!-- Duplicate symbols -->
+<use xlink:href="#what2" class="text"
+></use>
+<use xlink:href="#what2" class="text"
+></use>
+<use xlink:href="#what2" class="text"
+></use>
+<use xlink:href="#what2" class="text"
+></use>
+<use xlink:href="#what2" class="text"
+></use>
+
+</svg>
+
+<script>
+var socket = io.connect('//localhost:3030');
+    socket.on('text', function(text) {
+        console.log(text);
+        $("#line1").text(text);
+    });
+
+socket.on('text2', function(text) {
+    console.log(text);
+    $("#line2").text(text);
+});
+
+    socket.on('error', function() {
+        console.error(arguments)
+    });
+</script>
+
+</body>
+</html>

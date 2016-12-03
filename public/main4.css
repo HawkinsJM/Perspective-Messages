@@ -1,0 +1,48 @@
+/* Main styles */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+
+.text {
+  fill: black;
+
+  stroke: white;
+  stroke-width: 2;
+  stroke-linejoin: round;
+
+  /*dash array must add to 400*/
+  stroke-dasharray: 200 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+/* Other styles */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #000;
+  background-size: 100% 100%;
+  font: 6.2em Open Sans, Impact;
+  text-transform: uppercase;
+}
+
+svg {
+  position: absolute;
+  top: 0em;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
